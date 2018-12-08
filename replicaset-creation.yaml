@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: sajalrs
+
+spec:
+  template:
+    metadata:
+      name: sajalpod
+      labels: 
+        app: sajalapp
+    spec:
+     containers:
+       - name: nginx-container
+         image: nginx
+  replicas: 5
+
+  selector:
+    matchLabels:
+      app: sajalapp 

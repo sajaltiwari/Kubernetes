@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sajalhttp-ds
+
+spec:
+  template:
+    metadata:
+      name: sajal-http-pod
+      labels: 
+        app: sajal-httpd-app
+    spec:
+     containers:
+       - name: httpd-container
+         image: httpd
+  replicas: 5
+
+  selector:
+    matchLabels:
+      app: sajal-httpd-app 

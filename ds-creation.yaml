@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sajalds
+
+spec:
+  template:
+    metadata:
+      name: sajalpod
+      labels: 
+        app: sajalapp
+    spec:
+     containers:
+       - name: nginx-container
+         image: nginx:alpine
+  replicas: 9
+
+  selector:
+    matchLabels:
+      app: sajalapp 
